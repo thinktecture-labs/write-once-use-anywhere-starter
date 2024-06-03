@@ -1,0 +1,77 @@
+@use 'defaults';
+
+@mixin common-colors {
+  --md-sys-color-primary: #3D6FB4;
+  --md-sys-color-on-primary: white;
+
+  --md-sys-color-background: hsla(0deg 0% 11%);
+  --md-sys-color-on-background: rgba(255, 255, 255, .50);
+  --md-sys-color-surface: hsl(0deg 0% 18%);
+  --md-sys-color-on-surface: rgba(255, 255, 255, .67);
+
+  --md-sys-color-highlight: white;
+
+  --md-sys-color-outline: hsla(0deg, 0%, 0%, 1);
+}
+
+@mixin emphasis {
+  --md-sys-color-surface-emphasis-5: rgba(255, 255, 255, 87%);
+  --md-sys-color-surface-emphasis-4: rgba(255, 255, 255, 60%);
+  --md-sys-color-surface-emphasis-3: rgba(255, 255, 255, 38%);
+  --md-sys-color-surface-emphasis-2: rgba(255, 255, 255, 12%);
+  --md-sys-color-surface-emphasis-1: rgba(255, 255, 255, 4%);
+  --md-sys-color-surface-emphasis-0: rgba(255, 255, 255, 0%);
+
+  --md-sys-color-primary-emphasis-5: rgba(255, 255, 255, 100%);
+  --md-sys-color-primary-emphasis-4: rgba(255, 255, 255, 74%);
+  --md-sys-color-primary-emphasis-3: rgba(255, 255, 255, 38%);
+  --md-sys-color-primary-emphasis-2: rgba(255, 255, 255, 18%);
+  --md-sys-color-primary-emphasis-1: rgba(255, 255, 255, 10%);
+  --md-sys-color-primary-emphasis-0: rgba(255, 255, 255, 0%);
+}
+
+@mixin states {
+  --md-sys-state-hover-alpha: .14;
+  --md-sys-state-focused-alpha: .22;
+  --md-sys-state-pressed-alpha: .2;
+  --md-sys-state-dragged-alpha: .18;
+  --md-sys-state-selected-alpha: .18;
+  --md-sys-state-disabled-alpha: .38;
+}
+
+@mixin elevation {
+  --md-sys-shadow-key-alpha: 0.24;
+  --md-sys-shadow-ambient-alpha: 0.22;
+  --md-sys-shadow-ambient-2-alpha: 0.30;
+}
+
+@mixin placeholder {
+  --color-content-placeholder: var(--md-sys-color-surface-emphasis-4);
+  --color-content-placeholder-highlight: hsla(0deg, 0%, 18%, .6);
+}
+
+@mixin scrollbar {
+  --md-sys-color-scrollbar-thumb: rgba(255, 255, 255, 0.5);
+  --md-sys-color-scrollbar-thumb-hover: rgba(255, 255, 255, 0.6);
+  --md-sys-color-scrollbar-track: rgba(255, 255, 255, 0.12);
+}
+
+@mixin theme {
+  @include common-colors;
+  @include emphasis;
+  @include states;
+  @include placeholder;
+  @include elevation;
+  @include scrollbar;
+}
+
+.labs-dark-theme {
+  @include theme;
+  @include defaults.theme;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include theme;
+  }
+}

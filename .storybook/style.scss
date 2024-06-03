@@ -1,0 +1,32 @@
+html, body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+@mixin dark-theme {
+  --color-system-background: #232323;
+}
+
+@mixin light-theme {
+  --color-system-background: #EAEAEA;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include dark-theme;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include light-theme;
+  }
+}
+
+.labs-dark-theme {
+  @include dark-theme;
+}
+
+.labs-light-theme {
+  @include light-theme;
+}

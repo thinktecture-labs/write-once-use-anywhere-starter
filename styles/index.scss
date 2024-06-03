@@ -1,0 +1,9 @@
+@use 'layout';
+@use 'themes';
+@use 'mixins/ripple';
+@use 'components/placeholder';
+
+* {
+  box-sizing: border-box;
+  outline-color: var(--color-outline-focus);
+}

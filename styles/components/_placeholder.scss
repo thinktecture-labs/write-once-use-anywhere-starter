@@ -1,0 +1,16 @@
+@use '../mixins/placeholder';
+
+.labs-text-placeholder {
+  @include placeholder.text;
+  min-height: 1rem;
+  min-width: 6.5rem;
+}
+
+.labs-circle-placeholder {
+  @include placeholder.circle;
+  border-radius: 50%;
+}
+
+.labs-container-placeholder {
+  @include placeholder.container;
+}

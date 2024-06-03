@@ -5,3 +5,11 @@ This repository is an opinionated version of a Web Component starter project. Th
 # Attention
 
 This starter project will not be maintained!
+
+## Storybook
+
+npm run storybook
+
+## Build library
+
+npm run build

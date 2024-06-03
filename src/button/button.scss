@@ -1,0 +1,38 @@
+@use '../../styles/mixins/state';
+@use '../../styles/mixins/typography';
+@use '../../styles/mixins/visibility';
+@use '../../styles/mixins/elevation';
+
+button {
+  @include state.interactive;
+  @include typography.label-l;
+  @include visibility.overflow-hidden;
+  border: 1px solid transparent;
+  background: none;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  gap: 0.5rem;
+  border-radius: var(--md-sys-border-radius-xs);
+  color: var(--md-sys-color-primary);
+
+  :host-context(.type-outlined) & {
+    border: 1px solid var(--md-sys-color-surface-emphasis-2);
+  }
+
+  :host-context(.type-filled) & {
+    @include state.interactive-primary;
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+  }
+
+  :host-context(.type-elevated) & {
+    @include elevation.get(1);
+    &[disabled] {
+      @include elevation.get(0);
+    }
+
+    background-color: var(--md-sys-color-surface);
+  }
+}

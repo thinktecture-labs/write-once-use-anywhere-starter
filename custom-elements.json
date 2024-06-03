@@ -1,0 +1,497 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "scripts/scss-to-typed-css.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "processCSSFile",
+          "return": {
+            "type": {
+              "text": "Promise<void>"
+            }
+          },
+          "parameters": [
+            {
+              "name": "cssFilePath",
+              "type": {
+                "text": "string"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "processCSSFile",
+          "declaration": {
+            "name": "processCSSFile",
+            "module": "scripts/scss-to-typed-css.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TtButton",
+          "declaration": {
+            "name": "TtButton",
+            "module": "./button/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TtInput",
+          "declaration": {
+            "name": "TtInput",
+            "module": "./input/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/button/button.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "meta",
+          "type": {
+            "text": "Meta<TtButton>"
+          },
+          "default": "{ title: 'Components / Button', component: 'tt-button', render: (): TtButton => new TtButton(), tags: ['autodocs'], }"
+        },
+        {
+          "kind": "variable",
+          "name": "Text",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{ args: { label: 'Ich bin ein Text Button', }, render: (args): TemplateResult => html` <tt-button> ${args.label} </tt-button>`, }"
+        },
+        {
+          "kind": "variable",
+          "name": "Outlined",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{ args: { label: 'Ich bin ein Outlined Button', }, render: (args): TemplateResult => html` <tt-button type=\"outlined\"> ${args.label} </tt-button>`, }"
+        },
+        {
+          "kind": "variable",
+          "name": "Filled",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{ args: { label: 'Ich bin ein Filled Button', }, render: (args): TemplateResult => html` <tt-button type=\"filled\"> ${args.label} </tt-button>`, }"
+        },
+        {
+          "kind": "variable",
+          "name": "Elevated",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{ args: { label: 'Ich bin ein Elevated Button', }, render: (args): TemplateResult => html` <tt-button type=\"elevated\"> ${args.label} </tt-button>`, }"
+        },
+        {
+          "kind": "variable",
+          "name": "WithPrefix",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{ args: { label: 'Ich bin ein Button', }, render: (args): TemplateResult => html` <tt-button type=\"elevated\"> <tt-icon slot=\"prefix\"></tt-icon> ${args.label} </tt-button>`, }"
+        },
+        {
+          "kind": "variable",
+          "name": "WithSuffix",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{ args: { label: 'Ich bin ein Button', }, render: (args): TemplateResult => html` <tt-button type=\"elevated\"> <tt-icon slot=\"suffix\"></tt-icon> ${args.label} </tt-button>`, }"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "meta",
+            "module": "src/button/button.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Text",
+          "declaration": {
+            "name": "Text",
+            "module": "src/button/button.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Outlined",
+          "declaration": {
+            "name": "Outlined",
+            "module": "src/button/button.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Filled",
+          "declaration": {
+            "name": "Filled",
+            "module": "src/button/button.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Elevated",
+          "declaration": {
+            "name": "Elevated",
+            "module": "src/button/button.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WithPrefix",
+          "declaration": {
+            "name": "WithPrefix",
+            "module": "src/button/button.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WithSuffix",
+          "declaration": {
+            "name": "WithSuffix",
+            "module": "src/button/button.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/button/button.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "buttonStyles",
+          "type": {
+            "text": "CSSResult"
+          },
+          "default": "css`button { position: relative; z-index: 0; user-select: none; cursor: pointer; font: 500 0.875rem/1.25rem var(--md-sys-font-family); letter-spacing: 0.00625rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; border: 1px solid transparent; background: none; height: 2.25rem; display: flex; align-items: center; padding: 1.5rem 1rem; gap: 0.5rem; border-radius: var(--md-sys-border-radius-xs); color: var(--md-sys-color-primary); } button:after { pointer-events: none; content: \"\"; z-index: -1; opacity: 0; position: absolute; background-color: var(--color-overlay, currentColor); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } @media (hover) { button:hover { position: relative; z-index: 0; } button:hover:after { pointer-events: none; content: \"\"; z-index: -1; opacity: var(--md-sys-state-hover-alpha); position: absolute; background-color: var(--color-overlay, currentColor); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } } button:focus, button.has-focus { position: relative; z-index: 0; } button:focus:after, button.has-focus:after { pointer-events: none; content: \"\"; z-index: -1; opacity: var(--md-sys-state-focused-alpha); position: absolute; background-color: var(--color-overlay, currentColor); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } button:active { position: relative; z-index: 0; } button:active:after { pointer-events: none; content: \"\"; z-index: -1; opacity: var(--md-sys-state-pressed-alpha); position: absolute; background-color: var(--color-overlay, currentColor); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } button.dragged { position: relative; z-index: 0; z-index: 800; box-shadow: 0px 8px 10px rgba(0, 0, 0, var(--md-sys-shadow-key-alpha)), 0px 3px 14px rgba(0, 0, 0, var(--md-sys-shadow-ambient-alpha)), 0px 5px 5px rgba(0, 0, 0, var(--md-sys-shadow-ambient-2-alpha)); position: relative; z-index: 0; position: relative; z-index: 0; z-index: 800; box-shadow: 0px 8px 10px rgba(0, 0, 0, var(--md-sys-shadow-key-alpha)), 0px 3px 14px rgba(0, 0, 0, var(--md-sys-shadow-ambient-alpha)), 0px 5px 5px rgba(0, 0, 0, var(--md-sys-shadow-ambient-2-alpha)); } button.dragged:before { pointer-events: none; content: \"\"; z-index: var(--highlight-content); opacity: 0.06; position: absolute; background-color: var(--md-sys-color-highlight); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } button.dragged:after { pointer-events: none; content: \"\"; z-index: -1; opacity: var(--md-sys-state-dragged-alpha); position: absolute; background-color: var(--color-overlay, currentColor); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } button.dragged:before { pointer-events: none; content: \"\"; z-index: var(--highlight-content); opacity: 0.06; position: absolute; background-color: var(--md-sys-color-highlight); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } button.selected { position: relative; z-index: 0; } button.selected:after { pointer-events: none; content: \"\"; z-index: -1; opacity: var(--md-sys-state-selected-alpha); position: absolute; background-color: var(--color-overlay, currentColor); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } button.disabled, button[disabled] { position: relative; z-index: 0; opacity: var(--md-sys-state-disabled-alpha); cursor: default; } button.disabled:after, button[disabled]:after { pointer-events: none; content: \"\"; z-index: -1; opacity: 0; position: absolute; background-color: var(--color-overlay, currentColor); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } :host-context(.type-outlined) button { border: 1px solid var(--md-sys-color-surface-emphasis-2); } :host-context(.type-filled) button { --primary-constrast-patch: 1; position: relative; z-index: 0; user-select: none; cursor: pointer; --md-sys-color-surface: var(--md-sys-color-primary); --md-sys-color-on-surface: var(--md-sys-color-on-primary); --color-overlay: white; background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); } :host-context(.type-filled) button:after { pointer-events: none; content: \"\"; z-index: -1; opacity: 0; position: absolute; background-color: var(--color-overlay, currentColor); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } @media (hover) { :host-context(.type-filled) button:hover { position: relative; z-index: 0; } :host-context(.type-filled) button:hover:after { pointer-events: none; content: \"\"; z-index: -1; opacity: var(--md-sys-state-hover-alpha); position: absolute; background-color: var(--color-overlay, currentColor); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } } :host-context(.type-filled) button:focus, :host-context(.type-filled) button.has-focus { position: relative; z-index: 0; } :host-context(.type-filled) button:focus:after, :host-context(.type-filled) button.has-focus:after { pointer-events: none; content: \"\"; z-index: -1; opacity: var(--md-sys-state-focused-alpha); position: absolute; background-color: var(--color-overlay, currentColor); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } :host-context(.type-filled) button:active { position: relative; z-index: 0; } :host-context(.type-filled) button:active:after { pointer-events: none; content: \"\"; z-index: -1; opacity: var(--md-sys-state-pressed-alpha); position: absolute; background-color: var(--color-overlay, currentColor); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } :host-context(.type-filled) button.dragged { position: relative; z-index: 0; z-index: 800; box-shadow: 0px 8px 10px rgba(0, 0, 0, var(--md-sys-shadow-key-alpha)), 0px 3px 14px rgba(0, 0, 0, var(--md-sys-shadow-ambient-alpha)), 0px 5px 5px rgba(0, 0, 0, var(--md-sys-shadow-ambient-2-alpha)); position: relative; z-index: 0; position: relative; z-index: 0; z-index: 800; box-shadow: 0px 8px 10px rgba(0, 0, 0, var(--md-sys-shadow-key-alpha)), 0px 3px 14px rgba(0, 0, 0, var(--md-sys-shadow-ambient-alpha)), 0px 5px 5px rgba(0, 0, 0, var(--md-sys-shadow-ambient-2-alpha)); } :host-context(.type-filled) button.dragged:before { pointer-events: none; content: \"\"; z-index: var(--highlight-content); opacity: 0.06; position: absolute; background-color: var(--md-sys-color-highlight); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } :host-context(.type-filled) button.dragged:after { pointer-events: none; content: \"\"; z-index: -1; opacity: var(--md-sys-state-dragged-alpha); position: absolute; background-color: var(--color-overlay, currentColor); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } :host-context(.type-filled) button.dragged:before { pointer-events: none; content: \"\"; z-index: var(--highlight-content); opacity: 0.06; position: absolute; background-color: var(--md-sys-color-highlight); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } :host-context(.type-filled) button.selected { position: relative; z-index: 0; } :host-context(.type-filled) button.selected:after { pointer-events: none; content: \"\"; z-index: -1; opacity: var(--md-sys-state-selected-alpha); position: absolute; background-color: var(--color-overlay, currentColor); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } :host-context(.type-filled) button.disabled, :host-context(.type-filled) button[disabled] { position: relative; z-index: 0; opacity: var(--md-sys-state-disabled-alpha); cursor: default; } :host-context(.type-filled) button.disabled:after, :host-context(.type-filled) button[disabled]:after { pointer-events: none; content: \"\"; z-index: -1; opacity: 0; position: absolute; background-color: var(--color-overlay, currentColor); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } :host-context(.type-elevated) button { position: relative; z-index: 0; z-index: 100; box-shadow: 0px 1px 1px rgba(0, 0, 0, var(--md-sys-shadow-key-alpha)), 0px 2px 1px rgba(0, 0, 0, var(--md-sys-shadow-ambient-alpha)), 0px 1px 3px rgba(0, 0, 0, var(--md-sys-shadow-ambient-2-alpha)); background-color: var(--md-sys-color-surface); } :host-context(.type-elevated) button:before { pointer-events: none; content: \"\"; z-index: var(--highlight-content); opacity: 0.01; position: absolute; background-color: var(--md-sys-color-highlight); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } :host-context(.type-elevated) button[disabled] { position: relative; z-index: 0; z-index: 0; box-shadow: 0px 0px 0px rgba(0, 0, 0, var(--md-sys-shadow-key-alpha)), 0px 0px 0px rgba(0, 0, 0, var(--md-sys-shadow-ambient-alpha)), 0px 0px 0px rgba(0, 0, 0, var(--md-sys-shadow-ambient-2-alpha)); } :host-context(.type-elevated) button[disabled]:before { pointer-events: none; content: \"\"; z-index: var(--highlight-content); opacity: 0; position: absolute; background-color: var(--md-sys-color-highlight); transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; transform: scale(1); top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; } `"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "buttonStyles",
+          "declaration": {
+            "name": "buttonStyles",
+            "module": "src/button/button.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/button/button.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TtButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "_type",
+              "type": {
+                "text": "ButtonType"
+              },
+              "privacy": "private",
+              "default": "'text'"
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "attribute": "type"
+            },
+            {
+              "kind": "method",
+              "name": "addTypeStyle",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "type",
+                  "type": {
+                    "text": "ButtonType"
+                  }
+                }
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "name": "type",
+              "fieldName": "type"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "tt-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TtButton",
+          "declaration": {
+            "name": "TtButton",
+            "module": "src/button/button.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "tt-button",
+          "declaration": {
+            "name": "TtButton",
+            "module": "src/button/button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/button/button.type.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "BUTTON_TYPE_CLASSES",
+          "type": {
+            "text": "string[]"
+          },
+          "default": "[ 'type-outlined', 'type-filled', 'type-elevated', 'type-text', ]"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BUTTON_TYPE_CLASSES",
+          "declaration": {
+            "name": "BUTTON_TYPE_CLASSES",
+            "module": "src/button/button.type.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/button/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TtButton",
+          "declaration": {
+            "name": "TtButton",
+            "module": "./button"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ButtonType",
+          "declaration": {
+            "name": "ButtonType",
+            "module": "./button.type"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icon/icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TtIcon",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "tt-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TtIcon",
+          "declaration": {
+            "name": "TtIcon",
+            "module": "src/icon/icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "tt-icon",
+          "declaration": {
+            "name": "TtIcon",
+            "module": "src/icon/icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/input/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./input"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/input/input.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "meta",
+          "type": {
+            "text": "Meta<TtInput>"
+          },
+          "default": "{ title: 'Components / Input', component: 'tt-input', render: (): TtInput => new TtInput(), tags: ['autodocs'], }"
+        },
+        {
+          "kind": "variable",
+          "name": "Default",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{ args: { label: 'Ich bin ein Input', }, render: (args): TemplateResult => html` <tt-input> <label for=\"test\"> ${args.label}</label> <input id=\"test\" /> </tt-input>`, }"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "meta",
+            "module": "src/input/input.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Default",
+          "declaration": {
+            "name": "Default",
+            "module": "src/input/input.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/input/input.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "inputStyles",
+          "type": {
+            "text": "CSSResult"
+          },
+          "default": "css`:host { display: grid; grid-template-rows: auto auto; justify-content: space-between; gap: 0.25rem; padding: 0.2rem; color: var(--tt-input-text-color, #000); } ::slotted(label) { font-size: 0.8rem; font-weight: bold; } .input-box { display: inline-flex; border: 2px solid var(--tt-primary, #ff584f); border-radius: 5px; background-color: var(--tt-input-background-color); padding: 0.2rem; min-width: 170px; } .input-box ::slotted(input) { border: none; background-color: transparent; margin: 0; border-radius: 5px; font-size: 1rem; order: 1; } ::slotted(input:focus-visible) { border: none; background-color: transparent; outline: none; } ::slotted(span) { font-size: 0.8rem; order: 3; } `"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "inputStyles",
+          "declaration": {
+            "name": "inputStyles",
+            "module": "src/input/input.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/input/input.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TtInput",
+          "members": [
+            {
+              "kind": "field",
+              "name": "slottedLabel",
+              "type": {
+                "text": "ReadonlyArray<HTMLLabelElement | undefined>"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleSlotChange",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "tt-input",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TtInput",
+          "declaration": {
+            "name": "TtInput",
+            "module": "src/input/input.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "tt-input",
+          "declaration": {
+            "name": "TtInput",
+            "module": "src/input/input.ts"
+          }
+        }
+      ]
+    }
+  ]
+}

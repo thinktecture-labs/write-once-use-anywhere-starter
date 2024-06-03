@@ -1,0 +1,107 @@
+@mixin content-placeholder-base {
+  overflow: hidden;
+  position: relative;
+  transition: .3s ease;
+  transition-property: background-color, border-radius, color;
+
+  &::before {
+    content: var(--content-placeholder-content, '');
+    background: transparent linear-gradient(
+        to right,
+        transparent 0,
+        transparent calc(50% - 6.25rem),
+        var(--color-content-placeholder-highlight) 50%,
+        transparent calc(50% + 6.25rem),
+        transparent 100%
+    ) center left;
+    background-size: 100% 100%;
+    border-radius: var(--md-sys-border-radius-l);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  &.labs-show-content-placeholder {
+    color: transparent !important;
+    user-select: none;
+
+
+    &::before {
+      animation: content-placeholder-animation var(--content-placeholder-animation-duration, 1.5s) ease infinite;
+      opacity: 1;
+    }
+  }
+
+  &.labs-hide-content-placeholder {
+    &::before {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@keyframes content-placeholder-animation {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+
+@mixin text {
+  @include content-placeholder-base;
+  line-height: 1rem;
+  border-radius: var(--md-sys-border-radius-l);
+
+  &.labs-show-content-placeholder {
+    background: var(--md-sys-color-surface-emphasis-2);
+  }
+
+  &::before {
+    min-height: 1rem;
+    min-width: 6.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}
+
+@mixin container() {
+  @include content-placeholder-base;
+  --content-placeholder-animation-duration: 0s;
+  --content-placeholder-content: null;
+
+  &.labs-show-content-placeholder {
+    &::before {
+      --content-placeholder-content: '';
+      --content-placeholder-animation-duration: 2s;
+      z-index: 1;
+    }
+  }
+}
+
+@mixin circle {
+  @include content-placeholder-base;
+
+  &.labs-show-content-placeholder {
+    background: var(--md-sys-color-surface-emphasis-2);
+  }
+
+  &::before {
+    min-height: 1rem;
+    min-width: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}

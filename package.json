@@ -1,0 +1,88 @@
+{
+  "name": "@tt/ui-lib",
+  "description": "Webcomponent tt-ui-lib following open-wc recommendations",
+  "license": "MIT",
+  "author": "SL",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./tt-button.js": "./button/button.js",
+    "./tt-input.js": "./input/input.js"
+  },
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "prebuild": "npm run clean",
+    "analyze": "cem analyze --litelement",
+    "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
+    "build": "npm run transform && tsc && npm run analyze -- --exclude dist",
+    "build:watch": "tsc --watch",
+    "prepublish": "npm run transform && tsc && npm run analyze -- --exclude dist",
+    "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
+    "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
+    "test": "tsc && wtr --coverage",
+    "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
+    "copy:package": "cp -rn ./package.json ./dist/tt-ui-library",
+    "copy:styles": "mkdir -p ./dist/tt-ui-library/styles && cp -rn ./styles/index.css ./dist/tt-ui-library/styles/",
+    "copy:mixins": "mkdir -p ./dist/tt-ui-library/styles/mixins && cp -rn ./styles/mixins/ ./dist/tt-ui-library/styles/mixins/",
+    "postbuild": "npm run copy:styles && npm run copy:mixins && npm run copy:package",
+    "compile-scss": "sass src:src --no-source-map",
+    "compile-styles": "sass styles:styles --no-source-map",
+    "scss-to-ts": "tsx ./scripts/scss-to-typed-css.ts",
+    "transform": "npm run compile-scss && npm run compile-styles && npm run scss-to-ts",
+    "transform:watch": "nodemon --watch ./src/**/*.scss -x \"npm run transform\"",
+    "storybook": "tsc && npm run analyze -- --exclude dist && concurrently -k -r \"npm run transform:watch\" \"npm run build:watch\" \"storybook dev -p 6006\"",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "lit": "^3.1.3"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.4.0",
+    "@custom-elements-manifest/analyzer": "^0.10.2",
+    "@open-wc/eslint-config": "^12.0.3",
+    "@open-wc/testing": "^4.0.0",
+    "@storybook/addon-essentials": "^8.1.3",
+    "@storybook/addon-links": "^8.1.3",
+    "@storybook/blocks": "^8.1.3",
+    "@storybook/manager-api": "^8.1.3",
+    "@storybook/test": "^8.1.3",
+    "@storybook/theming": "^8.1.3",
+    "@storybook/web-components": "^8.1.3",
+    "@storybook/web-components-vite": "^8.1.3",
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "@web/dev-server": "^0.4.5",
+    "@web/test-runner": "^0.18.2",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-storybook": "^0.8.0",
+    "glob": "^10.4.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
+    "nodemon": "^3.1.1",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.7",
+    "sass": "^1.77.2",
+    "storybook": "^8.1.3",
+    "tslib": "^2.6.2",
+    "tsx": "^4.11.0",
+    "typescript": "^5.3.3"
+  },
+  "customElements": "custom-elements.json",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

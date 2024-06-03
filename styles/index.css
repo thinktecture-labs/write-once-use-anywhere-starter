@@ -1,0 +1,376 @@
+:root {
+  --labs-size-1: .25rem;
+  --labs-size-2: .5rem;
+  --labs-size-3: .75rem;
+  --labs-size-4: 1rem;
+  --labs-size-5: 1.25rem;
+  --labs-size-6: 1.5rem;
+  --labs-size-7: 1.75rem;
+  --labs-size-8: 2rem;
+  --labs-size-9: 3rem;
+  --labs-size-10: 4rem;
+  --labs-size-11: 5rem;
+  --labs-size-12: 7.5rem;
+  --labs-size-13: 10rem;
+  --gap-xl: 2rem;
+  --gap-l: 1.5rem;
+  --gap-m: 1rem;
+  --gap-s: 0.5rem;
+  --gap-xs: 0.25rem;
+}
+
+:root {
+  --md-sys-font-family: "Roboto", sans-serif;
+  --md-sys-border-radius-xs: 0.25rem;
+  --md-sys-border-radius-s: 0.5rem;
+  --md-sys-border-radius-m: 1rem;
+  --md-sys-border-radius-l: 1.5rem;
+  --md-sys-border-radius-xl: 2rem;
+  --outline-size: 0.0625rem;
+  --outline-size-negative: -0.0625rem;
+  --highlight-content: unset;
+  --color-backdrop: hsla(0, 0%, 0%, .38);
+  --app-logo: url("/logo.svg");
+  --color-outline-focus: var(--md-sys-color-primary);
+  --scrollbar-width: 0.75rem;
+  --scrollbar-thumb-radius: 5px;
+  accent-color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-font-family);
+  font-size: 16px;
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-background);
+}
+
+.labs-dark-theme {
+  --md-sys-color-primary: #3D6FB4;
+  --md-sys-color-on-primary: white;
+  --md-sys-color-background: hsla(0deg 0% 11%);
+  --md-sys-color-on-background: rgba(255, 255, 255, .50);
+  --md-sys-color-surface: hsl(0deg 0% 18%);
+  --md-sys-color-on-surface: rgba(255, 255, 255, .67);
+  --md-sys-color-highlight: white;
+  --md-sys-color-outline: hsla(0deg, 0%, 0%, 1);
+  --md-sys-color-surface-emphasis-5: rgba(255, 255, 255, 87%);
+  --md-sys-color-surface-emphasis-4: rgba(255, 255, 255, 60%);
+  --md-sys-color-surface-emphasis-3: rgba(255, 255, 255, 38%);
+  --md-sys-color-surface-emphasis-2: rgba(255, 255, 255, 12%);
+  --md-sys-color-surface-emphasis-1: rgba(255, 255, 255, 4%);
+  --md-sys-color-surface-emphasis-0: rgba(255, 255, 255, 0%);
+  --md-sys-color-primary-emphasis-5: rgba(255, 255, 255, 100%);
+  --md-sys-color-primary-emphasis-4: rgba(255, 255, 255, 74%);
+  --md-sys-color-primary-emphasis-3: rgba(255, 255, 255, 38%);
+  --md-sys-color-primary-emphasis-2: rgba(255, 255, 255, 18%);
+  --md-sys-color-primary-emphasis-1: rgba(255, 255, 255, 10%);
+  --md-sys-color-primary-emphasis-0: rgba(255, 255, 255, 0%);
+  --md-sys-state-hover-alpha: .14;
+  --md-sys-state-focused-alpha: .22;
+  --md-sys-state-pressed-alpha: .2;
+  --md-sys-state-dragged-alpha: .18;
+  --md-sys-state-selected-alpha: .18;
+  --md-sys-state-disabled-alpha: .38;
+  --color-content-placeholder: var(--md-sys-color-surface-emphasis-4);
+  --color-content-placeholder-highlight: hsla(0deg, 0%, 18%, .6);
+  --md-sys-shadow-key-alpha: 0.24;
+  --md-sys-shadow-ambient-alpha: 0.22;
+  --md-sys-shadow-ambient-2-alpha: 0.30;
+  --md-sys-color-scrollbar-thumb: rgba(255, 255, 255, 0.5);
+  --md-sys-color-scrollbar-thumb-hover: rgba(255, 255, 255, 0.6);
+  --md-sys-color-scrollbar-track: rgba(255, 255, 255, 0.12);
+  accent-color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-font-family);
+  font-size: 16px;
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-background);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --md-sys-color-primary: #3D6FB4;
+    --md-sys-color-on-primary: white;
+    --md-sys-color-background: hsla(0deg 0% 11%);
+    --md-sys-color-on-background: rgba(255, 255, 255, .50);
+    --md-sys-color-surface: hsl(0deg 0% 18%);
+    --md-sys-color-on-surface: rgba(255, 255, 255, .67);
+    --md-sys-color-highlight: white;
+    --md-sys-color-outline: hsla(0deg, 0%, 0%, 1);
+    --md-sys-color-surface-emphasis-5: rgba(255, 255, 255, 87%);
+    --md-sys-color-surface-emphasis-4: rgba(255, 255, 255, 60%);
+    --md-sys-color-surface-emphasis-3: rgba(255, 255, 255, 38%);
+    --md-sys-color-surface-emphasis-2: rgba(255, 255, 255, 12%);
+    --md-sys-color-surface-emphasis-1: rgba(255, 255, 255, 4%);
+    --md-sys-color-surface-emphasis-0: rgba(255, 255, 255, 0%);
+    --md-sys-color-primary-emphasis-5: rgba(255, 255, 255, 100%);
+    --md-sys-color-primary-emphasis-4: rgba(255, 255, 255, 74%);
+    --md-sys-color-primary-emphasis-3: rgba(255, 255, 255, 38%);
+    --md-sys-color-primary-emphasis-2: rgba(255, 255, 255, 18%);
+    --md-sys-color-primary-emphasis-1: rgba(255, 255, 255, 10%);
+    --md-sys-color-primary-emphasis-0: rgba(255, 255, 255, 0%);
+    --md-sys-state-hover-alpha: .14;
+    --md-sys-state-focused-alpha: .22;
+    --md-sys-state-pressed-alpha: .2;
+    --md-sys-state-dragged-alpha: .18;
+    --md-sys-state-selected-alpha: .18;
+    --md-sys-state-disabled-alpha: .38;
+    --color-content-placeholder: var(--md-sys-color-surface-emphasis-4);
+    --color-content-placeholder-highlight: hsla(0deg, 0%, 18%, .6);
+    --md-sys-shadow-key-alpha: 0.24;
+    --md-sys-shadow-ambient-alpha: 0.22;
+    --md-sys-shadow-ambient-2-alpha: 0.30;
+    --md-sys-color-scrollbar-thumb: rgba(255, 255, 255, 0.5);
+    --md-sys-color-scrollbar-thumb-hover: rgba(255, 255, 255, 0.6);
+    --md-sys-color-scrollbar-track: rgba(255, 255, 255, 0.12);
+  }
+}
+.labs-light-theme {
+  --md-sys-color-primary: #3D6FB4;
+  --md-sys-color-on-primary: white;
+  --md-sys-color-background: hsl(225deg 22% 96%);
+  --md-sys-color-on-background: hsl(0, 0%, 40%);
+  --md-sys-color-surface: white;
+  --md-sys-color-on-surface: hsl(0, 0%, 30%);
+  --md-sys-color-highlight: white;
+  --md-sys-color-outline: hsla(0deg, 0%, 80%, 1);
+  --md-sys-color-surface-emphasis-5: rgba(0, 0, 0, 87%);
+  --md-sys-color-surface-emphasis-4: rgba(0, 0, 0, 60%);
+  --md-sys-color-surface-emphasis-3: rgba(0, 0, 0, 38%);
+  --md-sys-color-surface-emphasis-2: rgba(0, 0, 0, 12%);
+  --md-sys-color-surface-emphasis-1: rgba(0, 0, 0, 4%);
+  --md-sys-color-surface-emphasis-0: rgba(0, 0, 0, 0%);
+  --md-sys-color-primary-emphasis-5: rgba(255, 255, 255, 100%);
+  --md-sys-color-primary-emphasis-4: rgba(255, 255, 255, 74%);
+  --md-sys-color-primary-emphasis-3: rgba(255, 255, 255, 38%);
+  --md-sys-color-primary-emphasis-2: rgba(255, 255, 255, 18%);
+  --md-sys-color-primary-emphasis-1: rgba(255, 255, 255, 10%);
+  --md-sys-color-primary-emphasis-0: rgba(255, 255, 255, 0%);
+  --md-sys-state-hover-alpha: .14;
+  --md-sys-state-focused-alpha: .22;
+  --md-sys-state-pressed-alpha: .2;
+  --md-sys-state-dragged-alpha: .18;
+  --md-sys-state-selected-alpha: .18;
+  --md-sys-state-disabled-alpha: .38;
+  --color-content-placeholder: var(--md-sys-color-surface-emphasis-4);
+  --color-content-placeholder-highlight: hsla(0, 0%, 100%, 0.6);
+  --md-sys-shadow-key-alpha: 0.14;
+  --md-sys-shadow-ambient-alpha: 0.12;
+  --md-sys-shadow-ambient-2-alpha: 0.20;
+  --md-sys-color-scrollbar-thumb: rgba(31, 41, 51, 0.2);
+  --md-sys-color-scrollbar-thumb-hover: rgba(31, 41, 51, 0.3);
+  --md-sys-color-scrollbar-track: rgba(31, 41, 51, 0.02);
+  accent-color: var(--md-sys-color-primary);
+  font-family: var(--md-sys-font-family);
+  font-size: 16px;
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-background);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --md-sys-color-primary: #3D6FB4;
+    --md-sys-color-on-primary: white;
+    --md-sys-color-background: hsl(225deg 22% 96%);
+    --md-sys-color-on-background: hsl(0, 0%, 40%);
+    --md-sys-color-surface: white;
+    --md-sys-color-on-surface: hsl(0, 0%, 30%);
+    --md-sys-color-highlight: white;
+    --md-sys-color-outline: hsla(0deg, 0%, 80%, 1);
+    --md-sys-color-surface-emphasis-5: rgba(0, 0, 0, 87%);
+    --md-sys-color-surface-emphasis-4: rgba(0, 0, 0, 60%);
+    --md-sys-color-surface-emphasis-3: rgba(0, 0, 0, 38%);
+    --md-sys-color-surface-emphasis-2: rgba(0, 0, 0, 12%);
+    --md-sys-color-surface-emphasis-1: rgba(0, 0, 0, 4%);
+    --md-sys-color-surface-emphasis-0: rgba(0, 0, 0, 0%);
+    --md-sys-color-primary-emphasis-5: rgba(255, 255, 255, 100%);
+    --md-sys-color-primary-emphasis-4: rgba(255, 255, 255, 74%);
+    --md-sys-color-primary-emphasis-3: rgba(255, 255, 255, 38%);
+    --md-sys-color-primary-emphasis-2: rgba(255, 255, 255, 18%);
+    --md-sys-color-primary-emphasis-1: rgba(255, 255, 255, 10%);
+    --md-sys-color-primary-emphasis-0: rgba(255, 255, 255, 0%);
+    --md-sys-state-hover-alpha: .14;
+    --md-sys-state-focused-alpha: .22;
+    --md-sys-state-pressed-alpha: .2;
+    --md-sys-state-dragged-alpha: .18;
+    --md-sys-state-selected-alpha: .18;
+    --md-sys-state-disabled-alpha: .38;
+    --color-content-placeholder: var(--md-sys-color-surface-emphasis-4);
+    --color-content-placeholder-highlight: hsla(0, 0%, 100%, 0.6);
+    --md-sys-shadow-key-alpha: 0.14;
+    --md-sys-shadow-ambient-alpha: 0.12;
+    --md-sys-shadow-ambient-2-alpha: 0.20;
+    --md-sys-color-scrollbar-thumb: rgba(31, 41, 51, 0.2);
+    --md-sys-color-scrollbar-thumb-hover: rgba(31, 41, 51, 0.3);
+    --md-sys-color-scrollbar-track: rgba(31, 41, 51, 0.02);
+  }
+}
+.labs-ripple {
+  position: relative;
+}
+.labs-ripple:not(.labs-ripple-center) {
+  overflow: hidden;
+}
+
+.labs-ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background-color: currentColor;
+  pointer-events: none;
+}
+.labs-ripple-effect.labs-ripple-active {
+  animation-name: labs-ripple;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes labs-ripple {
+  from {
+    transform: scale(0.01);
+    opacity: 0.4;
+  }
+  60% {
+    opacity: var(--md-sys-state-pressed-alpha);
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes content-placeholder-animation {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+.labs-text-placeholder {
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s ease;
+  transition-property: background-color, border-radius, color;
+  line-height: 1rem;
+  border-radius: var(--md-sys-border-radius-l);
+  min-height: 1rem;
+  min-width: 6.5rem;
+}
+.labs-text-placeholder::before {
+  content: var(--content-placeholder-content, "");
+  background: transparent linear-gradient(to right, transparent 0, transparent calc(50% - 6.25rem), var(--color-content-placeholder-highlight) 50%, transparent calc(50% + 6.25rem), transparent 100%) center left;
+  background-size: 100% 100%;
+  border-radius: var(--md-sys-border-radius-l);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+.labs-text-placeholder.labs-show-content-placeholder {
+  color: transparent !important;
+  user-select: none;
+}
+.labs-text-placeholder.labs-show-content-placeholder::before {
+  animation: content-placeholder-animation var(--content-placeholder-animation-duration, 1.5s) ease infinite;
+  opacity: 1;
+}
+.labs-text-placeholder.labs-hide-content-placeholder::before {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.labs-text-placeholder.labs-show-content-placeholder {
+  background: var(--md-sys-color-surface-emphasis-2);
+}
+.labs-text-placeholder::before {
+  min-height: 1rem;
+  min-width: 6.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.labs-circle-placeholder {
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s ease;
+  transition-property: background-color, border-radius, color;
+  border-radius: 50%;
+}
+.labs-circle-placeholder::before {
+  content: var(--content-placeholder-content, "");
+  background: transparent linear-gradient(to right, transparent 0, transparent calc(50% - 6.25rem), var(--color-content-placeholder-highlight) 50%, transparent calc(50% + 6.25rem), transparent 100%) center left;
+  background-size: 100% 100%;
+  border-radius: var(--md-sys-border-radius-l);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+.labs-circle-placeholder.labs-show-content-placeholder {
+  color: transparent !important;
+  user-select: none;
+}
+.labs-circle-placeholder.labs-show-content-placeholder::before {
+  animation: content-placeholder-animation var(--content-placeholder-animation-duration, 1.5s) ease infinite;
+  opacity: 1;
+}
+.labs-circle-placeholder.labs-hide-content-placeholder::before {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.labs-circle-placeholder.labs-show-content-placeholder {
+  background: var(--md-sys-color-surface-emphasis-2);
+}
+.labs-circle-placeholder::before {
+  min-height: 1rem;
+  min-width: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.labs-container-placeholder {
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s ease;
+  transition-property: background-color, border-radius, color;
+  --content-placeholder-animation-duration: 0s;
+  --content-placeholder-content: null;
+}
+.labs-container-placeholder::before {
+  content: var(--content-placeholder-content, "");
+  background: transparent linear-gradient(to right, transparent 0, transparent calc(50% - 6.25rem), var(--color-content-placeholder-highlight) 50%, transparent calc(50% + 6.25rem), transparent 100%) center left;
+  background-size: 100% 100%;
+  border-radius: var(--md-sys-border-radius-l);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+.labs-container-placeholder.labs-show-content-placeholder {
+  color: transparent !important;
+  user-select: none;
+}
+.labs-container-placeholder.labs-show-content-placeholder::before {
+  animation: content-placeholder-animation var(--content-placeholder-animation-duration, 1.5s) ease infinite;
+  opacity: 1;
+}
+.labs-container-placeholder.labs-hide-content-placeholder::before {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.labs-container-placeholder.labs-show-content-placeholder::before {
+  --content-placeholder-content: "";
+  --content-placeholder-animation-duration: 2s;
+  z-index: 1;
+}
+
+* {
+  box-sizing: border-box;
+  outline-color: var(--color-outline-focus);
+}
